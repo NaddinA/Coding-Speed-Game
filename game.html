@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="game.css" rel="stylesheet">
+  <title>🎮 Code.Prac</title>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <a href="index.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="337" height="92" viewBox="0 0 337 92">
+        <text id="Code.Prac" transform="translate(0 69)" fill="#fff" font-size="66" font-family="Poppins-Light, Poppins" font-weight="300"><tspan x="0" y="0">Code.</tspan><tspan y="0" fill="#3d405b">Prac</tspan></text>
+      </svg>
+    </a>
+    <label for="input-file" class="custom-file-upload">📁 Upload your file
+    </label>
+    <input id="input-file" type="file" accept=".py, .c, .js, .cs, .cpp, .java"/>
+      <!-- Counter -->
+      <div id="time">
+        <h2>⏱️ Timer</h2>
+        <select id="time-selection" onchange="check()">
+          <option value="0">Set the timer!</option>
+          <option value="1">1 Min (60s)</option>
+          <option value="3">3 Min (180s)</option>
+          <option value="5">5 Min (300s)</option>
+          <option value="8">8 Min (480s)</option>
+          <option value="10">10 Min (600s)</option>
+        </select>
+        <h3 id="counter">00</h3>
+        <a href="#userInput"><h2 id="start">🎮 Play</h2></a>
+      </div>
+    </div>
+      <!-- Main -->
+      <div id="textarea">
+        <p id="typingText">
+        </p>
+        <textarea id="userInput" placeholder="Once you press play, click here to start typing. Note: If you want to restart before the game ends, press CTRL+R. — Supported file extensions: .py, .c, .js, .cs, .cpp, .java —">
+        </textarea>
+      </div>
+      <!-- Result -->
+      <div id="result">
+        <div class="showResult">
+          <h2>WPM</h2>
+          <h1 id="words">00</h1>
+        </div>
+        <div class="showResult">
+          <h2>CPM</h2>
+          <h1 id="characters">00</h1>
+        </div>
+        <div class="showResult">
+          <h2>TYPOS</h2>
+          <h1 id="typos">00</h1>
+        </div>
+        <input type="button" value="Restart" onclick="eraseText();"> 
+      </div>
+  </div>
+  <h1 id="warning">According to the C++ core guidelines, playing this game on mobile is an unforgivable crime. Please open on your PC or laptop ^_^</h1>
+  <script src="javascript/game.js"></script>
+  <script src="javascript/templates.js"></script>
+</body>
+</html>
